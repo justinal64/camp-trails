@@ -5,10 +5,19 @@ import Colors from '@/constants/Colors';
 import { UpcomingTrip } from '@/components/home/UpcomingTrip';
 import { WeatherCard } from '@/components/home/WeatherCard';
 import { EmptyState } from '@/components/shared/EmptyState';
+import { CreateTripModal, TripFormData } from '@/components/trips/CreateTripModal';
 
 export default function HomeScreen() {
   const [hasUpcomingTrips, setHasUpcomingTrips] = useState(false);
+  const [isCreateTripModalVisible, setIsCreateTripModalVisible] = useState(false);
   
+  const handleCreateTrip = (tripData: TripFormData) => {
+    console.log('Creating trip:', tripData);
+    // Here you would typically save the trip to your database
+    setHasUpcomingTrips(true);
+    setIsCreateTripModalVisible(false);
+  };
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <View style={styles.welcomeSection}>
@@ -53,7 +62,7 @@ export default function HomeScreen() {
             title="No upcoming trips"
             message="Start planning your next adventure by creating a new trip."
             actionLabel="Create Trip"
-            onAction={() => {/* Navigate to trip creation */}}
+            onAction={() => setIsCreateTripModalVisible(true)}
           />
         )}
       </View>
@@ -61,7 +70,10 @@ export default function HomeScreen() {
       <View style={styles.quickStartSection}>
         <Text style={styles.sectionTitle}>Quick Actions</Text>
         <View style={styles.quickActionsGrid}>
-          <TouchableOpacity style={styles.quickAction}>
+          <TouchableOpacity 
+            style={styles.quickAction}
+            onPress={() => setIsCreateTripModalVisible(true)}
+          >
             <Calendar size={28} color={Colors.primary} />
             <Text style={styles.quickActionText}>New Trip</Text>
           </TouchableOpacity>
@@ -91,6 +103,12 @@ export default function HomeScreen() {
           <Text style={styles.recentActivityText}>You created a new trip to Yosemite</Text>
         </View>
       </View>
+
+      <CreateTripModal
+        visible={isCreateTripModalVisible}
+        onClose={() => setIsCreateTripModalVisible(false)}
+        onSubmit={handleCreateTrip}
+      />
     </ScrollView>
   );
 }
