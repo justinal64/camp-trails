@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { Backpack, Filter, Plus, Tag } from 'lucide-react-native';
+import { Shelter, Cooking, Clothing } from '@/components/icons/CustomIcons';
 import Colors from '@/constants/Colors';
 import { GearCard } from '@/components/gear/GearCard';
 import { EmptyState } from '@/components/shared/EmptyState';
