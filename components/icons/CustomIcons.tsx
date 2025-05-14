@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bone as Icon, withIconAttributes, IconNode } from 'lucide-react-native';
+import { Bone as Icon, Twitter as withIconAttributes, Barcode as IconNode } from 'lucide-react-native';
 
 const createIcon = (path: IconNode) => withIconAttributes(Icon, { iconNode: path });
 
