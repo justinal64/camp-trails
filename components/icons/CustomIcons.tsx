@@ -1,10 +1,8 @@
 import React from 'react';
-import { Bone as Icon, Twitter as withIconAttributes, Barcode as IconNode } from 'lucide-react-native';
-
-const createIcon = (path: IconNode) => withIconAttributes(Icon, { iconNode: path });
+import { Icon } from 'lucide-react-native';
 
 // Custom icon paths for camping-related icons
-const shelterPath: IconNode = {
+const shelterPath = {
   name: 'Shelter',
   iconNode: [
     ['path', { d: 'M2 20h20', key: 'f5g01c' }],
@@ -13,7 +11,7 @@ const shelterPath: IconNode = {
   ],
 };
 
-const cookingPath: IconNode = {
+const cookingPath = {
   name: 'Cooking',
   iconNode: [
     ['path', { d: 'M6 13.87A4 4 0 0 1 7.41 6a5.26 5.26 0 0 1 9.18 0A4 4 0 0 1 18 13.87V21H6V13.87z', key: '14ehs0' }],
@@ -23,7 +21,7 @@ const cookingPath: IconNode = {
   ],
 };
 
-const clothingPath: IconNode = {
+const clothingPath = {
   name: 'Clothing',
   iconNode: [
     ['path', { d: 'M4.9 19.1C1 15.2 1 8.8 4.9 4.9', key: '1p9tjy' }],
@@ -34,7 +32,7 @@ const clothingPath: IconNode = {
   ],
 };
 
-const backpackPath: IconNode = {
+const backpackPath = {
   name: 'Backpack',
   iconNode: [
     ['path', { d: 'M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z', key: '15u3e8' }],
@@ -45,7 +43,7 @@ const backpackPath: IconNode = {
   ],
 };
 
-const utensilsPath: IconNode = {
+const utensilsPath = {
   name: 'Utensils',
   iconNode: [
     ['path', { d: 'M11 9H9a1 1 0 0 0-1 1v4c0 1 .6 1 1 1h1', key: '1edvyi' }],
@@ -56,8 +54,8 @@ const utensilsPath: IconNode = {
   ],
 };
 
-export const Shelter = createIcon(shelterPath);
-export const Cooking = createIcon(cookingPath);
-export const Clothing = createIcon(clothingPath);
-export const Backpack = createIcon(backpackPath);
-export const Utensils = createIcon(utensilsPath);
+export const Shelter = (props: any) => <Icon {...props} icon={shelterPath} />;
+export const Cooking = (props: any) => <Icon {...props} icon={cookingPath} />;
+export const Clothing = (props: any) => <Icon {...props} icon={clothingPath} />;
+export const Backpack = (props: any) => <Icon {...props} icon={backpackPath} />;
+export const Utensils = (props: any) => <Icon {...props} icon={utensilsPath} />;
