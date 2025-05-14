@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'lucide-react-native';
+import { Bone as Icon } from 'lucide-react-native';
 
 // Custom icon paths for camping-related icons
 const shelterPath = {
