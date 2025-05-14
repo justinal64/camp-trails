@@ -1,6 +1,5 @@
 import React from 'react';
-import { Bone as Icon } from 'lucide-react-native';
-import { withIconAttributes, IconNode } from 'lucide-react-native/dist/cjs/withIconAttributes';
+import { Bone as Icon, withIconAttributes, IconNode } from 'lucide-react-native';
 
 const createIcon = (path: IconNode) => withIconAttributes(Icon, { iconNode: path });
 
